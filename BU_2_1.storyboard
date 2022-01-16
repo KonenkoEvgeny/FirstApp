@@ -220,7 +220,7 @@
             </objects>
             <point key="canvasLocation" x="2657" y="-245"/>
         </scene>
-        <!--Photos-->
+        <!--Collection View Controller-->
         <scene sceneID="vWl-pu-vyw">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bhY-3O-GhE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -250,7 +250,7 @@
                             <outlet property="delegate" destination="LEw-1i-ZVs" id="4Ll-fv-Dzp"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Photos" id="Nzc-NI-RBC"/>
+                    <navigationItem key="navigationItem" id="Nzc-NI-RBC"/>
                 </collectionViewController>
             </objects>
             <point key="canvasLocation" x="3523" y="-245"/>
@@ -301,7 +301,7 @@
             </objects>
             <point key="canvasLocation" x="2657" y="499"/>
         </scene>
-        <!--More communities-->
+        <!--Table View Controller-->
         <scene sceneID="vh9-sn-j9R">
             <objects>
                 <tableViewController id="tzJ-2i-7FR" sceneMemberID="viewController">
@@ -324,7 +324,7 @@
                             <outlet property="delegate" destination="tzJ-2i-7FR" id="mh3-RV-9Yn"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="More communities" id="6c9-ib-Saf"/>
+                    <navigationItem key="navigationItem" id="6c9-ib-Saf"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2SE-FZ-KD6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
