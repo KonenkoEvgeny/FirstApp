@@ -160,10 +160,11 @@
         <scene sceneID="I5W-1f-h9G">
             <objects>
                 <tabBarController id="GxW-cr-5Qv" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="OWF-N2-tWH"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ovi-MG-QKg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="GPx-cn-nFv" kind="relationship" relationship="viewControllers" id="AdL-dW-Ml8"/>
@@ -194,11 +195,20 @@
         <!--Friends-->
         <scene sceneID="4Xk-qD-IQM">
             <objects>
-                <tableViewController id="wzV-JI-7ih" sceneMemberID="viewController">
+                <tableViewController id="wzV-JI-7ih" customClass="FriendsListTableViewController" customModule="FirstApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="kpV-gj-2hQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="w0O-dJ-dM5">
+                            <rect key="frame" x="0.0" y="111" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            <connections>
+                                <segue destination="LEw-1i-ZVs" kind="show" id="ss4-yq-XIR"/>
+                            </connections>
+                        </button>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="z81-PZ-E2C">
                                 <rect key="frame" x="0.0" y="44.666666030883789" width="375" height="43.666667938232422"/>
@@ -214,7 +224,12 @@
                             <outlet property="delegate" destination="wzV-JI-7ih" id="Zvl-dR-0uB"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Friends" id="L4U-70-lgp"/>
+                    <navigationItem key="navigationItem" title="Friends" id="3DL-tG-luo">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="b32-mv-IMU"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="LEw-1i-ZVs" kind="show" identifier="friendsToPhotosSegue" id="YFq-Sw-dcn"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jre-Ie-O6y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -250,7 +265,9 @@
                             <outlet property="delegate" destination="LEw-1i-ZVs" id="4Ll-fv-Dzp"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Photos" id="Nzc-NI-RBC"/>
+                    <navigationItem key="navigationItem" title="Photos" id="bTm-LT-W0g">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="ii4-ce-eyW"/>
+                    </navigationItem>
                 </collectionViewController>
             </objects>
             <point key="canvasLocation" x="3523" y="-245"/>
@@ -280,6 +297,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="01c-zc-cUG">
+                            <rect key="frame" x="0.0" y="111" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Button">
+                                <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <segue destination="tzJ-2i-7FR" kind="show" id="HA1-az-c7l"/>
+                            </connections>
+                        </button>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="qeL-5F-PdS">
                                 <rect key="frame" x="0.0" y="44.666666030883789" width="375" height="43.666667938232422"/>
@@ -295,7 +323,9 @@
                             <outlet property="delegate" destination="rRT-gO-4ua" id="tjd-IZ-S6x"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Сommunities" id="wP5-gN-N7D"/>
+                    <navigationItem key="navigationItem" title="Сommunities" id="wP5-gN-N7D">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="UVs-9L-XNf"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OfC-hX-bMC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -331,6 +361,9 @@
             <point key="canvasLocation" x="3522" y="499"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="YFq-Sw-dcn"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="49.circle" catalog="system" width="128" height="121"/>
         <image name="49.square" catalog="system" width="128" height="114"/>
@@ -338,8 +371,8 @@
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

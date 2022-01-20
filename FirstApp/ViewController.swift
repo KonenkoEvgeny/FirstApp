@@ -11,7 +11,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -53,33 +52,38 @@ class ViewController: UIViewController {
 }
 
 private extension ViewController {
+    
     func setupTextFields() {
      loginTextField.keyboardType = .emailAddress
         passwordTextField.keyboardType = .numberPad
     }
+    
     func checkForValidationData() -> Bool {
         guard let loginText = loginTextField.text,
               let passwordText = passwordTextField.text else {
                   return false
               }
-        let isValidData = loginText == "hello" && passwordText == "12345"
+        let isValidData = loginText == "" && passwordText == ""
         return isValidData
         
     }
+    
     func showAllert(){
         let allertViewController = UIAlertController(title: "Error", message: "Enter valid login/password", preferredStyle: .alert)
-        let doneButton = UIAlertAction(title: "OK", style: .cancel, handler: nil
-//            {_ in
-//            self.passwordTextField = ""
-//            self.loginTextField = .none
-//            }
-//            Не даёт присвоить String или nil
+        let doneButton = UIAlertAction(title: "OK", style: .cancel, handler: //nil
+            {_ in
+            self.passwordTextField.text = ""
+            self.loginTextField.text = .none
+            }
+
         )
         allertViewController.addAction(doneButton)
         
         present(allertViewController, animated: true, completion: nil)
     }
     
+    
+// Тут выдаёт ошибку //  'internal' modifier conflicts with extension's default access of 'private'
 //    override internal func viewWillDisappear(_ animated: Bool) {
 //            super.viewWillDisappear(animated)
 //

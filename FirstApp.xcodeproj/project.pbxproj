@@ -13,10 +13,10 @@
 		534C16012785B5D000A24E74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 534C15FF2785B5D000A24E74 /* Main.storyboard */; };
 		534C16032785B5D100A24E74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 534C16022785B5D100A24E74 /* Assets.xcassets */; };
 		534C16062785B5D100A24E74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 534C16042785B5D100A24E74 /* LaunchScreen.storyboard */; };
-		5354BC8527897A1400121E99 /* BU_1_1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5354BC8427897A1400121E99 /* BU_1_1.storyboard */; };
-		5354BC88278984E900121E99 /* BU_1_2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5354BC86278984E900121E99 /* BU_1_2.storyboard */; };
-		5374FBBE2793FCA500EAE423 /* BU_2_1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5374FBBD2793FCA500EAE423 /* BU_2_1.storyboard */; };
-		5374FBC32794205800EAE423 /* BU_2_2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5374FBC12794205800EAE423 /* BU_2_2.storyboard */; };
+		5374FBD02799517200EAE423 /* FriendsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374FBCF2799517200EAE423 /* FriendsListTableViewController.swift */; };
+		5374FBD3279959D500EAE423 /* FriendsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374FBD1279959D500EAE423 /* FriendsListTableViewCell.swift */; };
+		5374FBD4279959D500EAE423 /* FriendsListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5374FBD2279959D500EAE423 /* FriendsListTableViewCell.xib */; };
+		5374FBD727995BBB00EAE423 /* FriendsListCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374FBD627995BBB00EAE423 /* FriendsListCellModel.swift */; };
 		53E28A3F2785BD10009AE51E /* ImageVkLogoInitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E28A3E2785BD10009AE51E /* ImageVkLogoInitial.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,10 +29,10 @@
 		534C16022785B5D100A24E74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		534C16052785B5D100A24E74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		534C16072785B5D100A24E74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5354BC8427897A1400121E99 /* BU_1_1.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BU_1_1.storyboard; sourceTree = "<group>"; };
-		5354BC87278984E900121E99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = FirstApp/Base.lproj/BU_1_2.storyboard; sourceTree = "<group>"; };
-		5374FBBD2793FCA500EAE423 /* BU_2_1.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BU_2_1.storyboard; sourceTree = "<group>"; };
-		5374FBC22794205800EAE423 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = FirstApp/Base.lproj/BU_2_2.storyboard; sourceTree = "<group>"; };
+		5374FBCF2799517200EAE423 /* FriendsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListTableViewController.swift; sourceTree = "<group>"; };
+		5374FBD1279959D500EAE423 /* FriendsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListTableViewCell.swift; sourceTree = "<group>"; };
+		5374FBD2279959D500EAE423 /* FriendsListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsListTableViewCell.xib; sourceTree = "<group>"; };
+		5374FBD627995BBB00EAE423 /* FriendsListCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListCellModel.swift; sourceTree = "<group>"; };
 		53E28A3E2785BD10009AE51E /* ImageVkLogoInitial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVkLogoInitial.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -50,10 +50,6 @@
 		534C15ED2785B5D000A24E74 = {
 			isa = PBXGroup;
 			children = (
-				5374FBC12794205800EAE423 /* BU_2_2.storyboard */,
-				5374FBBD2793FCA500EAE423 /* BU_2_1.storyboard */,
-				5354BC86278984E900121E99 /* BU_1_2.storyboard */,
-				5354BC8427897A1400121E99 /* BU_1_1.storyboard */,
 				534C15F82785B5D000A24E74 /* FirstApp */,
 				534C15F72785B5D000A24E74 /* Products */,
 			);
@@ -70,6 +66,7 @@
 		534C15F82785B5D000A24E74 /* FirstApp */ = {
 			isa = PBXGroup;
 			children = (
+				5374FBD827997D3800EAE423 /* FriendsList */,
 				534C15F92785B5D000A24E74 /* AppDelegate.swift */,
 				534C15FB2785B5D000A24E74 /* SceneDelegate.swift */,
 				534C15FD2785B5D000A24E74 /* ViewController.swift */,
@@ -80,6 +77,41 @@
 				534C16072785B5D100A24E74 /* Info.plist */,
 			);
 			path = FirstApp;
+			sourceTree = "<group>";
+		};
+		5374FBCB2799482700EAE423 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5374FBCF2799517200EAE423 /* FriendsListTableViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		5374FBCE2799511F00EAE423 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5374FBD1279959D500EAE423 /* FriendsListTableViewCell.swift */,
+				5374FBD2279959D500EAE423 /* FriendsListTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		5374FBD527995B9900EAE423 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5374FBD627995BBB00EAE423 /* FriendsListCellModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5374FBD827997D3800EAE423 /* FriendsList */ = {
+			isa = PBXGroup;
+			children = (
+				5374FBD527995B9900EAE423 /* Model */,
+				5374FBCB2799482700EAE423 /* ViewController */,
+				5374FBCE2799511F00EAE423 /* Cell */,
+			);
+			path = FriendsList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,12 +173,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				534C16062785B5D100A24E74 /* LaunchScreen.storyboard in Resources */,
-				5354BC88278984E900121E99 /* BU_1_2.storyboard in Resources */,
-				5374FBBE2793FCA500EAE423 /* BU_2_1.storyboard in Resources */,
-				5374FBC32794205800EAE423 /* BU_2_2.storyboard in Resources */,
+				5374FBD4279959D500EAE423 /* FriendsListTableViewCell.xib in Resources */,
 				534C16032785B5D100A24E74 /* Assets.xcassets in Resources */,
 				534C16012785B5D000A24E74 /* Main.storyboard in Resources */,
-				5354BC8527897A1400121E99 /* BU_1_1.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,6 +188,9 @@
 			files = (
 				534C15FE2785B5D000A24E74 /* ViewController.swift in Sources */,
 				534C15FA2785B5D000A24E74 /* AppDelegate.swift in Sources */,
+				5374FBD02799517200EAE423 /* FriendsListTableViewController.swift in Sources */,
+				5374FBD3279959D500EAE423 /* FriendsListTableViewCell.swift in Sources */,
+				5374FBD727995BBB00EAE423 /* FriendsListCellModel.swift in Sources */,
 				53E28A3F2785BD10009AE51E /* ImageVkLogoInitial.swift in Sources */,
 				534C15FC2785B5D000A24E74 /* SceneDelegate.swift in Sources */,
 			);
@@ -181,22 +213,6 @@
 				534C16052785B5D100A24E74 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		5354BC86278984E900121E99 /* BU_1_2.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5354BC87278984E900121E99 /* Base */,
-			);
-			name = BU_1_2.storyboard;
-			sourceTree = "<group>";
-		};
-		5374FBC12794205800EAE423 /* BU_2_2.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5374FBC22794205800EAE423 /* Base */,
-			);
-			name = BU_2_2.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
