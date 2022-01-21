@@ -1,29 +1,29 @@
 //
-//  FriendsListTableViewCell.swift
+//  CommunitiesListTableViewCell.swift
 //  FirstApp
 //
-//  Created by Evgeny Konenko on 20.01.2022.
+//  Created by Evgeny Konenko on 21.01.2022.
 //
 
 import UIKit
 
-class FriendsListTableViewCell: UITableViewCell {
-    
+class CommunitiesListTableViewCell: UITableViewCell {
+
     static func nib() -> UINib {
-        return UINib(nibName: "FriendsListTableViewCell", bundle: nil)
+        return UINib(nibName: "CommunitiesListTableViewCell", bundle: nil)
     }
     
-    @IBOutlet private var titleLabel: UILabel?
-    @IBOutlet private var contactImageView: UIImageView?
+    @IBOutlet private var communityTitleLabel: UILabel?
+    @IBOutlet private var communityImageView: UIImageView?
    
-    func setup(with data: FriendsListCellModel) {
-        titleLabel?.text = data.name + " " + data.surname
-        contactImageView?.image = UIImage(named: data.imageName)
+    func setup(with data: CommunitiesListCellModel) {
+        communityTitleLabel?.text = data.communityName
+        communityImageView?.image = UIImage(named: data.communityImageName)
     }
     
     func clearCell (){
-        titleLabel?.text = nil
-        contactImageView?.image = nil
+        communityTitleLabel?.text = nil
+        communityImageView?.image = nil
     }
     
     override func prepareForReuse(){
