@@ -9,12 +9,10 @@ import UIKit
 
 class CommunitiesListTableViewController: UITableViewController {
 
-    let image = UIImage(named: "1")
-    var communitiesList: [CommunitiesListCellModel] = [.init(communityName: "Vladimir", communityImageName: "putin_avatar"), .init(communityName: "Angela", communityImageName: "merkel_avatar"), .init(communityName: "Emmanuel", communityImageName: "macron_avatar")]
-    
+    var communitiesList: [CommunitiesListCellModel] = [.init(communityName: "Book club", communityImageName: "books_1"), .init(communityName: "Films club", communityImageName: "films_1"), .init(communityName: "Spicy food club", communityImageName: "spicy_food_1")]
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         registerTableViewCells()
     }
     
@@ -52,7 +50,7 @@ private extension CommunitiesListTableViewController {
     func registerTableViewCells() {
         // For nib
         tableView.register(CommunitiesListTableViewCell.nib(), forCellReuseIdentifier: "CommunitiesListTableViewCellId")
-        // For default and custom(code) cell
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "testId")
+//        // For default and custom(code) cell
+//        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "testId")
     }
 }

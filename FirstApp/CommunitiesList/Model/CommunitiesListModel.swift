@@ -9,6 +9,5 @@ import Foundation
 
 struct CommunitiesListCellModel {
     let communityName: String
-
     let communityImageName: String
 }
