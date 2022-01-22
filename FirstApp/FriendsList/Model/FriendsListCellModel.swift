@@ -5,10 +5,11 @@
 //  Created by Evgeny Konenko on 20.01.2022.
 //
 
-import Foundation
+import UIKit
 
 struct FriendsListCellModel {
     let name: String
     let surname: String
-    let imageName: String
+    var avatar = UIImage()
+    var photos = [UIImage]()
 }

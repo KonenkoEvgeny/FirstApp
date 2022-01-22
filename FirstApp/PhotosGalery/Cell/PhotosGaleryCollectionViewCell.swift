@@ -13,11 +13,13 @@ class PhotosGaleryCollectionViewCell: UICollectionViewCell {
         return UINib(nibName: "PhotosGaleryCollectionViewCell", bundle: nil)
     }
 
+    @IBOutlet private var backView: UIView!
+    
     @IBOutlet private var photosImageView: UIImageView?
     
     func setup(with data: PhotosGaleryCellModel){
         photosImageView?.image = UIImage(named: data.photosImageName)
-
+        backView.layer.backgroundColor = UIColor.systemTeal.cgColor
 
     }
     
@@ -27,6 +29,7 @@ class PhotosGaleryCollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        clearCell()
     }
     
     override func awakeFromNib() {

@@ -13,14 +13,10 @@ class FriendsListTableViewCell: UITableViewCell {
         return UINib(nibName: "FriendsListTableViewCell", bundle: nil)
     }
     
-    @IBOutlet private var titleLabel: UILabel?
-    @IBOutlet private var contactImageView: UIImageView?
+    @IBOutlet weak var backView: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var contactImageView: UIImageView!
    
-    func setup(with data: FriendsListCellModel) {
-        titleLabel?.text = data.name + " " + data.surname
-        contactImageView?.image = UIImage(named: data.imageName)
-    }
-    
     func clearCell (){
         titleLabel?.text = nil
         contactImageView?.image = nil
@@ -28,15 +24,23 @@ class FriendsListTableViewCell: UITableViewCell {
     
     override func prepareForReuse(){
         super.prepareForReuse()
+        clearCell()
 
     }
     
-//    не знаю, как запустить performSegue не из UIViewController
-//    @IBAction func friendsListToPhotos(_ sender: UIButton) {
-//
-//        performSegue(withIdentifier: "friendsToPhotosSegue", sender: self)
-//
-//    }
+    func setup(friend: FriendsListCellModel) {
+        contactImageView.image = friend.avatar
+        titleLabel.text = friend.name + " " + friend.surname
+        
+        // персонализация
+        
+        contactImageView?.layer.cornerRadius = 45
+        backView?.layer.cornerRadius = 45
+        backView?.layer.shadowColor = UIColor.black.cgColor
+        backView?.layer.shadowOffset = CGSize(width: 5, height: 5)
+        backView?.layer.shadowRadius = 5
+        backView?.layer.shadowOpacity = 0.5
+    }
     
     
     override func awakeFromNib() {
