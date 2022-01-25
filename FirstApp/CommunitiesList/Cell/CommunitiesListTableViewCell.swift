@@ -17,9 +17,9 @@ class CommunitiesListTableViewCell: UITableViewCell {
     @IBOutlet private var communityTitleLabel: UILabel?
     @IBOutlet private var communityImageView: UIImageView?
    
-    func setup(with data: CommunitiesListCellModel) {
+    func setup(data: CommunitiesListCellModel) {
         communityTitleLabel?.text = data.communityName
-        communityImageView?.image = UIImage(named: data.communityImageName)
+        communityImageView?.image = data.communityImage
         
         communityImageView?.layer.cornerRadius = 45
         backView?.layer.cornerRadius = 45

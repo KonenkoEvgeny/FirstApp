@@ -12,15 +12,12 @@ class PhotosGaleryCollectionViewCell: UICollectionViewCell {
     static func nib() -> UINib {
         return UINib(nibName: "PhotosGaleryCollectionViewCell", bundle: nil)
     }
-
-    @IBOutlet private var backView: UIView!
     
+    @IBOutlet private var backView: UIView!
     @IBOutlet private var photosImageView: UIImageView?
     
-    func setup(with data: PhotosGaleryCellModel){
-        photosImageView?.image = UIImage(named: data.photosImageName)
-        backView.layer.backgroundColor = UIColor.systemTeal.cgColor
-
+    func setup(image: UIImage){
+        photosImageView?.image = image
     }
     
     func clearCell(){
@@ -34,7 +31,6 @@ class PhotosGaleryCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
 }

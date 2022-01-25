@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FriendsListTableViewCell: UITableViewCell {
+@IBDesignable class FriendsListTableViewCell: UITableViewCell {
     
     static func nib() -> UINib {
         return UINib(nibName: "FriendsListTableViewCell", bundle: nil)
@@ -31,11 +31,9 @@ class FriendsListTableViewCell: UITableViewCell {
     func setup(friend: FriendsListCellModel) {
         contactImageView.image = friend.avatar
         titleLabel.text = friend.name + " " + friend.surname
-        
-        // персонализация
-        
-        contactImageView?.layer.cornerRadius = 45
-        backView?.layer.cornerRadius = 45
+ 
+        contactImageView?.layer.cornerRadius = contactImageView.frame.width/2
+        backView?.layer.cornerRadius = contactImageView.frame.width/2
         backView?.layer.shadowColor = UIColor.black.cgColor
         backView?.layer.shadowOffset = CGSize(width: 5, height: 5)
         backView?.layer.shadowRadius = 5

@@ -41,7 +41,6 @@ class ViewController: UIViewController {
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         guard identifier == "loginSegue" else {return false}
         if checkForValidationData() {
-            print(identifier, "👍👍👍👍👍")
             return true
 
         } else {
@@ -82,13 +81,5 @@ private extension ViewController {
         present(allertViewController, animated: true, completion: nil)
     }
     
-    
-// Тут выдаёт ошибку //  'internal' modifier conflicts with extension's default access of 'private'
-//    override internal func viewWillDisappear(_ animated: Bool) {
-//            super.viewWillDisappear(animated)
-//
-//            NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-//            NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-//        }
 }
 

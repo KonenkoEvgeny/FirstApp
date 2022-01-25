@@ -8,12 +8,7 @@
 import UIKit
 
 class FriendsListTableViewController: UITableViewController {
-
-//    let image = UIImage(named: "1")
-//    var contactList: [FriendsListCellModel] = [.init(name: "Vladimir", surname: "Putin", imageName: "putin_avatar"), .init(name: "Angela", surname: "Merkel", imageName: "merkel_avatar"), .init(name: "Emmanuel", surname: "Macron", imageName: "macron_avatar")]
-    
-    let FriendsListTableViewCellId = "FriendsListTableViewCellId"
-    let friendsToPhotosSegue = "friendsToPhotosSegue"
+  
     var contactList = [FriendsListCellModel]()
     
     func fillContactList(){
@@ -42,7 +37,7 @@ class FriendsListTableViewController: UITableViewController {
     func arrayByLetter(sourceArray: [FriendsListCellModel], letter: String) -> [FriendsListCellModel] {
         var resultArray = [FriendsListCellModel]()
         for item in sourceArray {
-            let nameLetter = String(item.name.prefix(1)).lowercased()
+            let nameLetter = String(item.surname.prefix(1)).lowercased()
             if nameLetter == letter.lowercased() {
                 resultArray.append(item)
             }
@@ -54,12 +49,15 @@ class FriendsListTableViewController: UITableViewController {
         super.viewDidLoad()
         fillContactList()
         registerTableViewCells()
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == friendsToPhotosSegue {}
-        
-        // дописать источник данных для галереи
+        if segue.identifier == friendsToPhotosSegue,
+           let destinationVC = segue.destination as? PhotosGaleryCollectionViewController,
+        let friend = sender as? FriendsListCellModel {
+            destinationVC.photosGalery = friend.photos
+        }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -70,28 +68,45 @@ class FriendsListTableViewController: UITableViewController {
         return arrayByLetter(sourceArray: contactList, letter: arrayLetter(sourceArray: contactList)[section]).count
     }
     
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: FriendsListTableViewCellId, for: indexPath) as? FriendsListTableViewCell else {
-            return UITableViewCell()
-        }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: friendsListTableViewCellId , for: indexPath) as? FriendsListTableViewCell else
+            {return UITableViewCell()}
+        
         cell.setup(friend: arrayByLetter(sourceArray: contactList, letter: arrayLetter(sourceArray: contactList)[indexPath.section])[indexPath.row])
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath, "🍏🍏🍏🍏🍏")
-        performSegue(withIdentifier: friendsToPhotosSegue, sender: contactList[indexPath.row])
+        
+        let a = indexPath.section
+        let b = indexPath.row
+        var friendId = 0
+        if a == 0 && b == 0 {friendId = 0}
+        if a == 1 && b == 0 {friendId = 1}
+        if a == 1 && b == 1 {friendId = 2}
+        if a == 2 && b == 0 {friendId = 3}
+// Просто номером строки решить не удалось, создал костыль на 4 друга. Из-за разного количества секций:
+//        override func numberOfSections(in tableView: UITableView) -> Int {
+//        return arrayLetter(sourceArray: contactList).count
+//    }
+//        print(indexPath)
+//        print(contactList[friendId])
+        performSegue(withIdentifier: friendsToPhotosSegue, sender: contactList[friendId])
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return arrayLetter(sourceArray: contactList)[section].uppercased()
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(100)
+    }
 }
 
 private extension FriendsListTableViewController {
     func registerTableViewCells() {
-        // For nib
-        tableView.register(FriendsListTableViewCell.nib(), forCellReuseIdentifier: FriendsListTableViewCellId)
+        tableView.register(UINib(nibName: friendsListTableViewCell, bundle: nil), forCellReuseIdentifier: friendsListTableViewCellId)
     }
 }

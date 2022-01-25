@@ -9,8 +9,15 @@ import UIKit
 
 class CommunitiesListTableViewController: UITableViewController {
 
-    var communitiesList: [CommunitiesListCellModel] = [.init(communityName: "Book club", communityImageName: "books_1"), .init(communityName: "Films club", communityImageName: "films_1"), .init(communityName: "Spicy food club", communityImageName: "spicy_food_1")]
+    
+
+    var communitiesList = [CommunitiesListCellModel]()
         
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerTableViewCells()
@@ -28,8 +35,8 @@ class CommunitiesListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CommunitiesListTableViewCellId", for: indexPath) as! CommunitiesListTableViewCell
-        cell.setup(with: communitiesList[indexPath.row])
+        let cell = tableView.dequeueReusableCell(withIdentifier: CommunitiesListTableViewCellId, for: indexPath) as! CommunitiesListTableViewCell
+        cell.setup(data: communitiesList[indexPath.row])
         return cell
     }
     
@@ -41,16 +48,35 @@ class CommunitiesListTableViewController: UITableViewController {
         print(indexPath, "🍏🍏🍏🍏🍏")
     }
     
-//    override func performSegue(withIdentifier identifier: String, sender: Any?) {
-//        <#code#>
-//    }
+    func isItemAlreadyInArray(group: CommunitiesListCellModel) -> Bool {
+        return communitiesList.contains { sourceGroup in
+            sourceGroup.communityName == group.communityName
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+            if editingStyle == .delete {
+                communitiesList.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+        }
+
+    
+    @IBAction func unwindSegueToMyGroup(segue: UIStoryboardSegue) {
+        if segue.identifier == fromAllCommunitiesToCommunitiesSegue,
+           let sourceVC = segue.source as? AllCommunitiesViewController,
+           let selectedGroup = sourceVC.selectedGroup
+        {
+            if isItemAlreadyInArray(group: selectedGroup) {return}
+            self.communitiesList.append(selectedGroup)
+            tableView.reloadData()
+        }
+        }
 }
 
 private extension CommunitiesListTableViewController {
-    func registerTableViewCells() {
-        // For nib
-        tableView.register(CommunitiesListTableViewCell.nib(), forCellReuseIdentifier: "CommunitiesListTableViewCellId")
-//        // For default and custom(code) cell
-//        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "testId")
+    func registerTableViewCells()
+    {
+        tableView.register(CommunitiesListTableViewCell.nib(), forCellReuseIdentifier: CommunitiesListTableViewCellId)
     }
 }
