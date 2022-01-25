@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -200,25 +199,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemGray2Color"/>
-                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="w0O-dJ-dM5">
-                            <rect key="frame" x="0.0" y="111" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                            <connections>
-                                <segue destination="LEw-1i-ZVs" kind="show" id="ss4-yq-XIR"/>
-                            </connections>
-                        </button>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="z81-PZ-E2C">
-                                <rect key="frame" x="0.0" y="44.666666030883789" width="375" height="43.666667938232422"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="z81-PZ-E2C" id="Aj3-kd-EhM">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="wzV-JI-7ih" id="Z5O-9G-fLU"/>
                             <outlet property="delegate" destination="wzV-JI-7ih" id="Zvl-dR-0uB"/>
@@ -238,28 +218,18 @@
         <!--Photos-->
         <scene sceneID="vWl-pu-vyw">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bhY-3O-GhE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <collectionViewController id="LEw-1i-ZVs" customClass="PhotosGaleryCollectionViewController" customModule="FirstApp" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="CFX-pc-2Uv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemTealColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="U7c-lY-jm9">
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="U7c-lY-jm9">
                             <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ypa-Ad-On2">
-                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vXy-j9-7NG">
-                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </collectionViewCellContentView>
-                            </collectionViewCell>
-                        </cells>
+                        <cells/>
                         <connections>
                             <outlet property="dataSource" destination="LEw-1i-ZVs" id="9zW-cd-xzK"/>
                             <outlet property="delegate" destination="LEw-1i-ZVs" id="4Ll-fv-Dzp"/>
@@ -269,6 +239,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="ii4-ce-eyW"/>
                     </navigationItem>
                 </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bhY-3O-GhE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3523" y="-245"/>
         </scene>
@@ -289,7 +260,7 @@
             </objects>
             <point key="canvasLocation" x="1800" y="499"/>
         </scene>
-        <!--Сommunities-->
+        <!--MyСommunities-->
         <scene sceneID="bCg-Sq-AHH">
             <objects>
                 <tableViewController id="rRT-gO-4ua" customClass="CommunitiesListTableViewController" customModule="FirstApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -297,79 +268,71 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
-                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="01c-zc-cUG">
-                            <rect key="frame" x="0.0" y="111" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="plain" title="Button">
-                                <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </buttonConfiguration>
-                            <connections>
-                                <segue destination="tzJ-2i-7FR" kind="show" id="HA1-az-c7l"/>
-                            </connections>
-                        </button>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="qeL-5F-PdS">
-                                <rect key="frame" x="0.0" y="44.666666030883789" width="375" height="43.666667938232422"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qeL-5F-PdS" id="T4F-5B-IR9">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="rRT-gO-4ua" id="sbn-dJ-9Ra"/>
                             <outlet property="delegate" destination="rRT-gO-4ua" id="tjd-IZ-S6x"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Сommunities" id="wP5-gN-N7D">
+                    <navigationItem key="navigationItem" title="MyСommunities" id="wP5-gN-N7D">
                         <barButtonItem key="backBarButtonItem" title="Back" id="UVs-9L-XNf"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="r4R-3c-r0u">
+                            <connections>
+                                <segue destination="xtG-OL-pWW" kind="show" identifier="" id="ln7-LQ-Lhj"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OfC-hX-bMC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2657" y="499"/>
         </scene>
-        <!--More communities-->
-        <scene sceneID="vh9-sn-j9R">
+        <!--All Communities-->
+        <scene sceneID="AB8-b4-z83">
             <objects>
-                <tableViewController id="tzJ-2i-7FR" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="5hZ-Fk-oY5">
+                <viewController id="xtG-OL-pWW" customClass="AllCommunitiesViewController" customModule="FirstApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SoM-Ci-7qa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="UKv-an-jfd">
-                                <rect key="frame" x="0.0" y="44.666666030883789" width="375" height="43.666667938232422"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UKv-an-jfd" id="3Ry-OW-UdG">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="tzJ-2i-7FR" id="psz-N5-bKf"/>
-                            <outlet property="delegate" destination="tzJ-2i-7FR" id="mh3-RV-9Yn"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="More communities" id="6c9-ib-Saf"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2SE-FZ-KD6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="JyQ-dA-TgM">
+                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6zE-C0-DUo"/>
+                        <color key="backgroundColor" systemColor="systemBrownColor"/>
+                        <constraints>
+                            <constraint firstItem="JyQ-dA-TgM" firstAttribute="leading" secondItem="6zE-C0-DUo" secondAttribute="leading" id="0mg-cD-xiI"/>
+                            <constraint firstItem="6zE-C0-DUo" firstAttribute="bottom" secondItem="JyQ-dA-TgM" secondAttribute="bottom" id="A1b-QO-qrD"/>
+                            <constraint firstItem="6zE-C0-DUo" firstAttribute="trailing" secondItem="JyQ-dA-TgM" secondAttribute="trailing" id="SPE-5I-Wsm"/>
+                            <constraint firstItem="JyQ-dA-TgM" firstAttribute="top" secondItem="6zE-C0-DUo" secondAttribute="top" id="toZ-Am-aNY"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="All Communities" id="6Al-wt-nOF"/>
+                    <connections>
+                        <outlet property="tableView" destination="JyQ-dA-TgM" id="sgY-sp-Ryj"/>
+                        <segue destination="7pZ-hH-8fu" kind="unwind" identifier="fromAllCommunitiesToCommunitiesSegue" unwindAction="unwindSegueToMyGroupWithSegue:" id="wgE-wR-1mi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aHo-XH-Zmb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="7pZ-hH-8fu" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3522" y="499"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="YFq-Sw-dcn"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="49.circle" catalog="system" width="128" height="121"/>
         <image name="49.square" catalog="system" width="128" height="114"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="vkcom" width="2500" height="2500"/>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -379,9 +342,6 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
