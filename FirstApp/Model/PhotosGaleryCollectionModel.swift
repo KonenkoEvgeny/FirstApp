@@ -5,7 +5,7 @@
 //  Created by Evgeny Konenko on 21.01.2022.
 //
 
-import Foundation
+import UIKit
 
 struct PhotosGaleryCellModel {
     let photosImageName: String

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LikeCounterView" customModule="FirstApp" customModuleProvider="target">
+            <connections>
+                <outlet property="heartButton" destination="xfp-I3-npA" id="MZG-Hn-sZj"/>
+                <outlet property="likeCounterLabel" destination="Jhg-m2-Dvg" id="AOw-U6-vvy"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xfp-I3-npA">
+                    <rect key="frame" x="142" y="150" width="58" height="50"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
+                    <connections>
+                        <action selector="pressHeartButton:" destination="-1" eventType="touchUpInside" id="Xps-UF-hen"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jhg-m2-Dvg">
+                    <rect key="frame" x="100" y="165" width="42" height="20"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                    <size key="shadowOffset" width="0.0" height="0.0"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="xfp-I3-npA" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="DGS-gn-Sn7"/>
+                <constraint firstItem="xfp-I3-npA" firstAttribute="leading" secondItem="Jhg-m2-Dvg" secondAttribute="trailing" id="QJS-Ww-Ypj"/>
+                <constraint firstItem="Jhg-m2-Dvg" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="121" id="b8x-6V-43O"/>
+                <constraint firstItem="xfp-I3-npA" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="106" id="bsF-TZ-wIl"/>
+                <constraint firstItem="Jhg-m2-Dvg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="100" id="cHg-cr-zuh"/>
+                <constraint firstItem="xfp-I3-npA" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="eEI-BI-qei"/>
+                <constraint firstItem="Jhg-m2-Dvg" firstAttribute="centerY" secondItem="xfp-I3-npA" secondAttribute="centerY" id="tNx-nx-Qpi"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="111.59420289855073" y="154.35267857142856"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="heart" catalog="system" width="128" height="109"/>
+    </resources>
+</document>

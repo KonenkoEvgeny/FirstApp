@@ -5,9 +5,9 @@
 //  Created by Evgeny Konenko on 21.01.2022.
 //
 
-import Foundation
+import UIKit
 
 struct CommunitiesListCellModel {
-    let communityName: String
-    let communityImageName: String
+    var communityName = String()
+    var communityImage = UIImage()
 }

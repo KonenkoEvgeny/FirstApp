@@ -13,12 +13,20 @@ class CommunitiesListTableViewCell: UITableViewCell {
         return UINib(nibName: "CommunitiesListTableViewCell", bundle: nil)
     }
     
+    @IBOutlet weak var backView: UIView!
     @IBOutlet private var communityTitleLabel: UILabel?
     @IBOutlet private var communityImageView: UIImageView?
    
-    func setup(with data: CommunitiesListCellModel) {
+    func setup(data: CommunitiesListCellModel) {
         communityTitleLabel?.text = data.communityName
-        communityImageView?.image = UIImage(named: data.communityImageName)
+        communityImageView?.image = data.communityImage
+        
+        communityImageView?.layer.cornerRadius = 45
+        backView?.layer.cornerRadius = 45
+        backView?.layer.shadowColor = UIColor.black.cgColor
+        backView?.layer.shadowOffset = CGSize(width: 5, height: 5)
+        backView?.layer.shadowRadius = 5
+        backView?.layer.shadowOpacity = 0.5
     }
     
     func clearCell (){
@@ -28,6 +36,7 @@ class CommunitiesListTableViewCell: UITableViewCell {
     
     override func prepareForReuse(){
         super.prepareForReuse()
+        clearCell()
 
     }
     
