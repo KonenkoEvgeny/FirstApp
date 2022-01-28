@@ -29,6 +29,8 @@
 		537CE1D1279EAE7B00E70D1B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537CE1D0279EAE7B00E70D1B /* Constants.swift */; };
 		537CE1DA27A0343D00E70D1B /* LikeCounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537CE1D927A0343D00E70D1B /* LikeCounterView.swift */; };
 		537CE1DC27A0344F00E70D1B /* LikeCounterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 537CE1DB27A0344F00E70D1B /* LikeCounterView.xib */; };
+		537CE1DE27A2C0BF00E70D1B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537CE1DD27A2C0BF00E70D1B /* LoginViewController.swift */; };
+		537CE1E027A3C01A00E70D1B /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537CE1DF27A3C01A00E70D1B /* ShadowView.swift */; };
 		53E28A3F2785BD10009AE51E /* ImageVkLogoInitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E28A3E2785BD10009AE51E /* ImageVkLogoInitial.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +59,8 @@
 		537CE1D0279EAE7B00E70D1B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		537CE1D927A0343D00E70D1B /* LikeCounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeCounterView.swift; sourceTree = "<group>"; };
 		537CE1DB27A0344F00E70D1B /* LikeCounterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LikeCounterView.xib; sourceTree = "<group>"; };
+		537CE1DD27A2C0BF00E70D1B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		537CE1DF27A3C01A00E70D1B /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		53E28A3E2785BD10009AE51E /* ImageVkLogoInitial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVkLogoInitial.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,7 +104,9 @@
 				534C15FB2785B5D000A24E74 /* SceneDelegate.swift */,
 				534C15FD2785B5D000A24E74 /* ViewController.swift */,
 				534C15FF2785B5D000A24E74 /* Main.storyboard */,
+				537CE1DD27A2C0BF00E70D1B /* LoginViewController.swift */,
 				53E28A3E2785BD10009AE51E /* ImageVkLogoInitial.swift */,
+				537CE1DF27A3C01A00E70D1B /* ShadowView.swift */,
 				534C16022785B5D100A24E74 /* Assets.xcassets */,
 				534C16042785B5D100A24E74 /* LaunchScreen.storyboard */,
 				534C16072785B5D100A24E74 /* Info.plist */,
@@ -281,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				537CE1E027A3C01A00E70D1B /* ShadowView.swift in Sources */,
 				537CE1DA27A0343D00E70D1B /* LikeCounterView.swift in Sources */,
 				537CE1CF279E8DAC00E70D1B /* AllCommunitiesViewController.swift in Sources */,
 				5374FBF0279B3E5A00EAE423 /* PhotosGaleryCollectionModel.swift in Sources */,
@@ -294,6 +301,7 @@
 				5374FBE1279AC01200EAE423 /* CommunitiesListTableViewCell.swift in Sources */,
 				53E28A3F2785BD10009AE51E /* ImageVkLogoInitial.swift in Sources */,
 				5374FBEA279AF09300EAE423 /* PhotosGaleryCollectionViewController.swift in Sources */,
+				537CE1DE27A2C0BF00E70D1B /* LoginViewController.swift in Sources */,
 				534C15FC2785B5D000A24E74 /* SceneDelegate.swift in Sources */,
 				5374FBE4279AC06400EAE423 /* CommunitiesListModel.swift in Sources */,
 				5374FBED279B3DEC00EAE423 /* PhotosGaleryCollectionViewCell.swift in Sources */,
