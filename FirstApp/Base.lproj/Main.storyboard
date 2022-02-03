@@ -60,9 +60,6 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Telephone or email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="908-S7-3Lq">
@@ -195,13 +192,45 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="GPx-cn-nFv" kind="relationship" relationship="viewControllers" id="AdL-dW-Ml8"/>
-                        <segue destination="trW-P7-MZg" kind="relationship" relationship="viewControllers" id="NDy-9p-MB9"/>
+                        <segue destination="ASM-sR-lhA" kind="relationship" relationship="viewControllers" id="wgG-2E-wUb"/>
+                        <segue destination="GPx-cn-nFv" kind="relationship" relationship="viewControllers" id="c8w-zt-Tdf"/>
+                        <segue destination="trW-P7-MZg" kind="relationship" relationship="viewControllers" id="0bv-a4-rSa"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C7P-O2-4if" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="943" y="83"/>
+        </scene>
+        <!--News-->
+        <scene sceneID="haz-2q-1Tf">
+            <objects>
+                <viewController id="ASM-sR-lhA" customClass="NewsViewController" customModule="FirstApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9cX-m4-2gW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wUc-Wn-jtI">
+                                <rect key="frame" x="0.0" y="44" width="375" height="685"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="CJF-BI-LeT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CJF-BI-LeT" firstAttribute="trailing" secondItem="wUc-Wn-jtI" secondAttribute="trailing" id="Gg2-GL-zws"/>
+                            <constraint firstItem="wUc-Wn-jtI" firstAttribute="leading" secondItem="CJF-BI-LeT" secondAttribute="leading" id="UNa-ve-E4h"/>
+                            <constraint firstItem="wUc-Wn-jtI" firstAttribute="top" secondItem="CJF-BI-LeT" secondAttribute="top" id="Zda-YY-QOR"/>
+                            <constraint firstItem="CJF-BI-LeT" firstAttribute="bottom" secondItem="wUc-Wn-jtI" secondAttribute="bottom" id="o5O-Rz-FE1"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="News" image="newspaper" catalog="system" id="qUw-BD-Zi6"/>
+                    <connections>
+                        <outlet property="tableView" destination="wUc-Wn-jtI" id="NPv-B8-vBl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Olc-dD-t9L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1812" y="-951.72413793103453"/>
         </scene>
         <!--Friends-->
         <scene sceneID="Nxt-1x-Rjb">
@@ -352,6 +381,7 @@
     <resources>
         <image name="49.circle" catalog="system" width="128" height="121"/>
         <image name="49.square" catalog="system" width="128" height="114"/>
+        <image name="newspaper" catalog="system" width="128" height="111"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="vkcom" width="2500" height="2500"/>
         <systemColor name="systemBackgroundColor">
