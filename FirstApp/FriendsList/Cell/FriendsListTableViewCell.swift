@@ -13,13 +13,12 @@ import UIKit
         return UINib(nibName: "FriendsListTableViewCell", bundle: nil)
     }
     
-    @IBOutlet weak var backView: UIView!
+    @IBOutlet weak var avatarFriendView: AvatarsView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var contactImageView: UIImageView!
    
     func clearCell (){
         titleLabel?.text = nil
-        contactImageView?.image = nil
+        avatarFriendView.avatarImage.image = nil
     }
     
     override func prepareForReuse(){
@@ -29,17 +28,14 @@ import UIKit
     }
     
     func setup(friend: FriendsListCellModel) {
-        contactImageView.image = friend.avatar
         titleLabel.text = friend.name + " " + friend.surname
- 
-        contactImageView?.layer.cornerRadius = contactImageView.frame.width/2
-        backView?.layer.cornerRadius = contactImageView.frame.width/2
-        backView?.layer.shadowColor = UIColor.black.cgColor
-        backView?.layer.shadowOffset = CGSize(width: 5, height: 5)
-        backView?.layer.shadowRadius = 5
-        backView?.layer.shadowOpacity = 0.5
+        avatarFriendView.avatarImage.image = friend.avatar
     }
     
+    func setup(data: CommunitiesListCellModel) {
+        titleLabel.text = data.communityName
+        avatarFriendView.avatarImage.image = data.communityImage
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

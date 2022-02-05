@@ -13,6 +13,6 @@ let friendsToPhotosSegue = "friendsToPhotosSegue"
 let friendsListCellModel = "FriendsListCellModel"
 let CommunitiesListTableViewCellId = "CommunitiesListTableViewCellId"
 let fromAllCommunitiesToCommunitiesSegue = "fromAllCommunitiesToCommunitiesSegue"
-
-
+let newsTableViewCell = "NewsTableViewCell"
+let newsTableViewCellId = "newsTableViewCellId"
 

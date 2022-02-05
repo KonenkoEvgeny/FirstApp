@@ -7,16 +7,28 @@
 
 import UIKit
 
-class AllCommunitiesViewController: UIViewController {
+class AllCommunitiesViewController: UIViewController, UISearchBarDelegate {
 
-    @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var tableView: UITableView! 
+    @IBOutlet weak var searchBar: UISearchBar!
+     
     let communitiesListTableViewCellId = "CommunitiesListTableViewCellId"
     
     var allCommunities = [CommunitiesListCellModel]()
+    var buCommunities = [CommunitiesListCellModel]()
     let fromAllCommunitiesToCommunitiesSegue = "fromAllCommunitiesToCommunitiesSegue"
 
     var selectedGroup: CommunitiesListCellModel?
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        if searchText.isEmpty {
+            allCommunities = buCommunities
+        }else{
+            allCommunities = allCommunities.filter { $0.communityName.lowercased().contains(searchText.lowercased())}
+        }
+        tableView.reloadData()
+    }
     
     func fill() {
         let community1 = CommunitiesListCellModel(communityName: "Books", communityImage: UIImage(named: "books_1")!)
@@ -25,6 +37,7 @@ class AllCommunitiesViewController: UIViewController {
         allCommunities.append(community1)
         allCommunities.append(community2)
         allCommunities.append(community3)
+        buCommunities = allCommunities
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -38,6 +51,7 @@ class AllCommunitiesViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        searchBar.delegate = self
     }
 
 
@@ -46,7 +60,7 @@ class AllCommunitiesViewController: UIViewController {
 private extension AllCommunitiesViewController {
     func registerTableViewCells()
     {
-        tableView.register(CommunitiesListTableViewCell.nib(), forCellReuseIdentifier: communitiesListTableViewCellId)
+        tableView.register(FriendsListTableViewCell.nib(), forCellReuseIdentifier: friendsListTableViewCellId)
     }
 }
 
@@ -59,7 +73,8 @@ extension AllCommunitiesViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: communitiesListTableViewCellId, for: indexPath) as? CommunitiesListTableViewCell else {return UITableViewCell()}
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: friendsListTableViewCellId, for: indexPath) as? FriendsListTableViewCell else {return UITableViewCell()}
         cell.setup(data: allCommunities[indexPath.row])
         return cell
     }
@@ -67,10 +82,10 @@ extension AllCommunitiesViewController: UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.selectedGroup = allCommunities[indexPath.row]
         performSegue(withIdentifier: fromAllCommunitiesToCommunitiesSegue, sender: nil)
-        print ("performSegue fromAllCommunitiesToCommunitiesSegue")
+       // print ("performSegue fromAllCommunitiesToCommunitiesSegue")
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(100)
+        return CGFloat(50)
     }
 }
