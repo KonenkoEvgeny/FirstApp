@@ -84,6 +84,7 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Sign in">
                                     <fontDescription key="titleFontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="16"/>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="didTapOnLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ubS-Ys-bR9"/>
@@ -195,6 +196,7 @@
                         <segue destination="ASM-sR-lhA" kind="relationship" relationship="viewControllers" id="wgG-2E-wUb"/>
                         <segue destination="GPx-cn-nFv" kind="relationship" relationship="viewControllers" id="c8w-zt-Tdf"/>
                         <segue destination="trW-P7-MZg" kind="relationship" relationship="viewControllers" id="0bv-a4-rSa"/>
+                        <segue destination="tcL-js-rU2" kind="relationship" relationship="viewControllers" id="3Rl-gz-L4w"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C7P-O2-4if" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -236,7 +238,7 @@
         <scene sceneID="Nxt-1x-Rjb">
             <objects>
                 <navigationController id="GPx-cn-nFv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Friends" image="49.circle" catalog="system" id="le0-WS-ZjI"/>
+                    <tabBarItem key="tabBarItem" title="Friends" image="person.2" catalog="system" id="le0-WS-ZjI"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ojn-Ej-SQ8">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -305,7 +307,7 @@
         <scene sceneID="Ona-0q-Nlz">
             <objects>
                 <navigationController id="trW-P7-MZg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Сommunities" image="49.square" catalog="system" id="tWV-TA-sLX"/>
+                    <tabBarItem key="tabBarItem" title="Сommunities" image="person.3" catalog="system" id="tWV-TA-sLX"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NYb-tm-1dS">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -317,6 +319,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GbZ-tf-bpa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1800" y="499"/>
+        </scene>
+        <!--Animations-->
+        <scene sceneID="E4r-C9-3Im">
+            <objects>
+                <viewController id="tcL-js-rU2" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Edj-Q1-eNd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kwf-Rb-lOc" customClass="LoadingAnimationView" customModule="FirstApp" customModuleProvider="target">
+                                <rect key="frame" x="67" y="44" width="241" height="20"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="RXZ-dZ-bEV"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JB8-Qn-NPj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kwf-Rb-lOc" firstAttribute="top" secondItem="JB8-Qn-NPj" secondAttribute="top" id="Om5-aN-kfu"/>
+                            <constraint firstItem="kwf-Rb-lOc" firstAttribute="centerX" secondItem="Edj-Q1-eNd" secondAttribute="centerX" id="l2I-d3-dFU"/>
+                            <constraint firstItem="kwf-Rb-lOc" firstAttribute="leading" secondItem="JB8-Qn-NPj" secondAttribute="leading" constant="67" id="xbI-9E-W2D"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Animations" image="play.tv" catalog="system" id="2AL-6k-wRB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mh2-Zw-UaQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1788" y="1172"/>
         </scene>
         <!--MyСommunities-->
         <scene sceneID="bCg-Sq-AHH">
@@ -385,9 +417,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="49.circle" catalog="system" width="128" height="121"/>
-        <image name="49.square" catalog="system" width="128" height="114"/>
         <image name="newspaper" catalog="system" width="128" height="111"/>
+        <image name="person.2" catalog="system" width="128" height="81"/>
+        <image name="person.3" catalog="system" width="128" height="62"/>
+        <image name="play.tv" catalog="system" width="128" height="97"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="vkcom" width="2500" height="2500"/>
         <systemColor name="systemBackgroundColor">

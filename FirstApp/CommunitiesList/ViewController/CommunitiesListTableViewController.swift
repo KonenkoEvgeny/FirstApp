@@ -9,8 +9,6 @@ import UIKit
 
 class CommunitiesListTableViewController: UITableViewController {
 
-    
-
     var communitiesList = [CommunitiesListCellModel]()
         
     override func viewDidAppear(_ animated: Bool) {
@@ -35,7 +33,9 @@ class CommunitiesListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: CommunitiesListTableViewCellId, for: indexPath) as! CommunitiesListTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "friendsListTableViewCellId" , for: indexPath) as? FriendsListTableViewCell else
+        {return UITableViewCell()}
+//
         cell.setup(data: communitiesList[indexPath.row])
         return cell
     }
@@ -45,7 +45,10 @@ class CommunitiesListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath, "🍏🍏🍏🍏🍏")
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(50)
     }
     
     func isItemAlreadyInArray(group: CommunitiesListCellModel) -> Bool {
@@ -76,7 +79,7 @@ class CommunitiesListTableViewController: UITableViewController {
 
 private extension CommunitiesListTableViewController {
     func registerTableViewCells()
-    {
-        tableView.register(CommunitiesListTableViewCell.nib(), forCellReuseIdentifier: CommunitiesListTableViewCellId)
-    }
+        {
+            tableView.register(FriendsListTableViewCell.nib(), forCellReuseIdentifier: friendsListTableViewCellId)
+        }
 }
