@@ -33,6 +33,8 @@ import UIKit
         titleLabel.text = friend.name + " " + friend.surname
  
         contactImageView?.layer.cornerRadius = contactImageView.frame.width/2
+        contactImageView.layer.borderWidth = 1
+        contactImageView.layer.borderColor = UIColor.black.cgColor  
         backView?.layer.cornerRadius = contactImageView.frame.width/2
         backView?.layer.shadowColor = UIColor.black.cgColor
         backView?.layer.shadowOffset = CGSize(width: 5, height: 5)

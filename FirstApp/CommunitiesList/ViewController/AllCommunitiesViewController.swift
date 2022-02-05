@@ -7,16 +7,28 @@
 
 import UIKit
 
-class AllCommunitiesViewController: UIViewController {
+class AllCommunitiesViewController: UIViewController, UISearchBarDelegate {
 
-    @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var tableView: UITableView! 
+    @IBOutlet weak var searchBar: UISearchBar!
+     
     let communitiesListTableViewCellId = "CommunitiesListTableViewCellId"
     
     var allCommunities = [CommunitiesListCellModel]()
+    var bu = [CommunitiesListCellModel]()
     let fromAllCommunitiesToCommunitiesSegue = "fromAllCommunitiesToCommunitiesSegue"
 
     var selectedGroup: CommunitiesListCellModel?
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        if searchText.isEmpty {
+            allCommunities = bu
+        }else{
+            allCommunities = allCommunities.filter { $0.communityName.lowercased().contains(searchText.lowercased())}
+        }
+        tableView.reloadData()
+    }
     
     func fill() {
         let community1 = CommunitiesListCellModel(communityName: "Books", communityImage: UIImage(named: "books_1")!)
@@ -25,6 +37,7 @@ class AllCommunitiesViewController: UIViewController {
         allCommunities.append(community1)
         allCommunities.append(community2)
         allCommunities.append(community3)
+        bu = allCommunities
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -38,6 +51,7 @@ class AllCommunitiesViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        searchBar.delegate = self
     }
 
 

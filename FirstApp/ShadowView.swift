@@ -7,8 +7,7 @@
 
 import UIKit
 
-@IBDesignable
-class ShadowView: UIView {
+@IBDesignable class ShadowView: UIView {
 
     // Не пойму, вроде и выбираю в сториборде другие значения, но они похоже не меняются, где ошибки?
     
@@ -30,12 +29,18 @@ class ShadowView: UIView {
         set { layer.shadowRadius = 20  }
         get { return layer.shadowRadius }
     }
-    @IBInspectable var shadowOpacity: Float {
-        // не получается сделать тут тип CGFloat, в сториборде выбираются только целые числа
-        set { layer.shadowOpacity = 0.7  }
-        get { return layer.shadowOpacity }
-    }
+    @IBInspectable var shadowOpacity: CGFloat = 0.7 {
+        didSet{
+        setNeedsDisplay()
+        }
+        
+        
+//        // не получается сделать тут тип CGFloat, в сториборде выбираются только целые числа
+//        set { layer.shadowOpacity = 0.7  }
+//        get { return layer.shadowOpacity }
+   }
     
+ 
     
 //    layer.cornerRadius = 45
 //    layer.cornerRadius = 45

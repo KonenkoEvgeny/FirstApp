@@ -39,14 +39,7 @@ class CommunitiesListTableViewCell: UITableViewCell {
         clearCell()
 
     }
-    
-//    не знаю, как запустить performSegue не из UIViewController
-//    @IBAction func friendsListToPhotos(_ sender: UIButton) {
-//
-//        performSegue(withIdentifier: "friendsToPhotosSegue", sender: self)
-//
-//    }
-    
+     
     
     override func awakeFromNib() {
         super.awakeFromNib()
