@@ -56,7 +56,8 @@ extension PhotosGaleryCollectionViewController: UICollectionViewDelegateFlowLayo
             let whiteSpace = CGFloat(1)
             let lineCountCell = CGFloat(2)
             let cellWidth = collectionViewWidth / lineCountCell - whiteSpace
-            return CGSize(width: cellWidth, height: cellWidth)
+   //         return CGSize(width: cellWidth, height: cellWidth)
+            return CGSize(width: cellWidth, height: 220)
         }
     
 }
