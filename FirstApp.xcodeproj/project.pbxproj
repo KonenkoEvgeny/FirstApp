@@ -15,6 +15,8 @@
 		534C16062785B5D100A24E74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 534C16042785B5D100A24E74 /* LaunchScreen.storyboard */; };
 		535E1ED827AE842C00877779 /* LoadingAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535E1ED727AE842C00877779 /* LoadingAnimationView.swift */; };
 		535E1EDA27AE88F400877779 /* AvatarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535E1ED927AE88F400877779 /* AvatarsView.swift */; };
+		535E1EDC27B05DCF00877779 /* FriendsPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535E1EDB27B05DCF00877779 /* FriendsPhotosViewController.swift */; };
+		535E1EDE27B2705200877779 /* CloudAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535E1EDD27B2705200877779 /* CloudAnimationView.swift */; };
 		5374FBD02799517200EAE423 /* FriendsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374FBCF2799517200EAE423 /* FriendsListTableViewController.swift */; };
 		5374FBD3279959D500EAE423 /* FriendsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374FBD1279959D500EAE423 /* FriendsListTableViewCell.swift */; };
 		5374FBD4279959D500EAE423 /* FriendsListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5374FBD2279959D500EAE423 /* FriendsListTableViewCell.xib */; };
@@ -52,6 +54,8 @@
 		534C16072785B5D100A24E74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		535E1ED727AE842C00877779 /* LoadingAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAnimationView.swift; sourceTree = "<group>"; };
 		535E1ED927AE88F400877779 /* AvatarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarsView.swift; sourceTree = "<group>"; };
+		535E1EDB27B05DCF00877779 /* FriendsPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsPhotosViewController.swift; sourceTree = "<group>"; };
+		535E1EDD27B2705200877779 /* CloudAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudAnimationView.swift; sourceTree = "<group>"; };
 		5374FBCF2799517200EAE423 /* FriendsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListTableViewController.swift; sourceTree = "<group>"; };
 		5374FBD1279959D500EAE423 /* FriendsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListTableViewCell.swift; sourceTree = "<group>"; };
 		5374FBD2279959D500EAE423 /* FriendsListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsListTableViewCell.xib; sourceTree = "<group>"; };
@@ -136,6 +140,7 @@
 				537CE1DF27A3C01A00E70D1B /* ShadowView.swift */,
 				535E1ED727AE842C00877779 /* LoadingAnimationView.swift */,
 				535E1ED927AE88F400877779 /* AvatarsView.swift */,
+				535E1EDD27B2705200877779 /* CloudAnimationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -217,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				5374FBE9279AF09300EAE423 /* PhotosGaleryCollectionViewController.swift */,
+				535E1EDB27B05DCF00877779 /* FriendsPhotosViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -330,6 +336,7 @@
 				537CE1DA27A0343D00E70D1B /* LikeCounterView.swift in Sources */,
 				537CE1E627AB27C200E70D1B /* NewsTableViewCell.swift in Sources */,
 				537CE1CF279E8DAC00E70D1B /* AllCommunitiesViewController.swift in Sources */,
+				535E1EDE27B2705200877779 /* CloudAnimationView.swift in Sources */,
 				5374FBF0279B3E5A00EAE423 /* PhotosGaleryCollectionModel.swift in Sources */,
 				534C15FE2785B5D000A24E74 /* ViewController.swift in Sources */,
 				5374FBDA2799AB3800EAE423 /* CommunitiesListTableViewController.swift in Sources */,
@@ -347,6 +354,7 @@
 				5374FBEA279AF09300EAE423 /* PhotosGaleryCollectionViewController.swift in Sources */,
 				537CE1DE27A2C0BF00E70D1B /* LoginViewController.swift in Sources */,
 				534C15FC2785B5D000A24E74 /* SceneDelegate.swift in Sources */,
+				535E1EDC27B05DCF00877779 /* FriendsPhotosViewController.swift in Sources */,
 				5374FBE4279AC06400EAE423 /* CommunitiesListModel.swift in Sources */,
 				5374FBED279B3DEC00EAE423 /* PhotosGaleryCollectionViewCell.swift in Sources */,
 			);

@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,13 +10,13 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotosGaleryViewCellId" translatesAutoresizingMaskIntoConstraints="NO" id="gTV-IL-0wX" customClass="PhotosGaleryCollectionViewCell" customModule="FirstApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+            <rect key="frame" x="0.0" y="0.0" width="200" height="250"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                <rect key="frame" x="0.0" y="0.0" width="200" height="250"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bjA-Gq-UiK">
-                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="250"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eXm-TK-rMb">
                                 <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
@@ -26,42 +25,47 @@
                                     <constraint firstAttribute="width" secondItem="eXm-TK-rMb" secondAttribute="height" multiplier="1:1" id="bk4-91-pqr"/>
                                 </constraints>
                             </imageView>
+                            <view opaque="NO" clipsSubviews="YES" contentMode="center" id="RbQ-Nx-kK9" customClass="LikeControl" customModule="FirstApp" customModuleProvider="target">
+                                <rect key="frame" x="150" y="200" width="50" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="counter">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="colorNoLike">
+                                        <color key="value" systemColor="systemBlueColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="eXm-TK-rMb" firstAttribute="centerY" secondItem="bjA-Gq-UiK" secondAttribute="centerY" id="dvD-Lc-Zgn"/>
+                            <constraint firstItem="eXm-TK-rMb" firstAttribute="centerY" secondItem="bjA-Gq-UiK" secondAttribute="centerY" multiplier="0.8" id="dvD-Lc-Zgn"/>
                             <constraint firstItem="eXm-TK-rMb" firstAttribute="centerX" secondItem="bjA-Gq-UiK" secondAttribute="centerX" id="jOt-XW-BW5"/>
                         </constraints>
                     </view>
-                    <view opaque="NO" clipsSubviews="YES" contentMode="center" id="RbQ-Nx-kK9" customClass="LikeCounterView" customModule="FirstApp" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="counter">
-                                <integer key="value" value="2"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                    </view>
                 </subviews>
             </view>
-            <viewLayoutGuide key="safeArea" id="1sF-LW-Lbo"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="bjA-Gq-UiK" secondAttribute="trailing" id="OcR-sY-uLS"/>
                 <constraint firstItem="bjA-Gq-UiK" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="WxG-UO-2pg"/>
                 <constraint firstItem="bjA-Gq-UiK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="gCy-Uc-KR8"/>
-                <constraint firstItem="1sF-LW-Lbo" firstAttribute="bottom" secondItem="bjA-Gq-UiK" secondAttribute="bottom" id="x4O-Zd-TWl"/>
+                <constraint firstAttribute="bottom" secondItem="bjA-Gq-UiK" secondAttribute="bottom" id="x4O-Zd-TWl"/>
             </constraints>
-            <size key="customSize" width="504" height="433"/>
+            <size key="customSize" width="504" height="505"/>
             <connections>
                 <outlet property="backView" destination="bjA-Gq-UiK" id="8qe-b4-qY8"/>
                 <outlet property="photosImageView" destination="eXm-TK-rMb" id="2nA-mV-ckU"/>
             </connections>
-            <point key="canvasLocation" x="52.173913043478265" y="194.19642857142856"/>
+            <point key="canvasLocation" x="52.173913043478265" y="218.30357142857142"/>
         </collectionViewCell>
     </objects>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

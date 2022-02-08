@@ -176,6 +176,7 @@
                         <outlet property="loginTextField" destination="908-S7-3Lq" id="JrN-dn-pJ9"/>
                         <outlet property="passwordTextField" destination="mna-d3-b9t" id="LLs-gS-Y9C"/>
                         <outlet property="vkView" destination="MWu-XY-S12" id="DEd-xz-QwV"/>
+                        <segue destination="GxW-cr-5Qv" kind="show" id="YN6-V5-jFg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -212,7 +213,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wUc-Wn-jtI">
-                                <rect key="frame" x="0.0" y="44" width="375" height="685"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -298,10 +299,45 @@
                     <navigationItem key="navigationItem" title="Photos" id="bTm-LT-W0g">
                         <barButtonItem key="backBarButtonItem" title="Back" id="ii4-ce-eyW"/>
                     </navigationItem>
+                    <connections>
+                        <segue destination="Y7g-Gm-Moj" kind="presentation" id="1YG-nK-WLR"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bhY-3O-GhE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3523" y="-245"/>
+            <point key="canvasLocation" x="3574" y="-245"/>
+        </scene>
+        <!--Friends Photos View Controller-->
+        <scene sceneID="l9q-H3-Ske">
+            <objects>
+                <viewController id="Y7g-Gm-Moj" customClass="FriendsPhotosViewController" customModule="FirstApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RwE-Lw-his">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Oa-Hy-Lrv">
+                                <rect key="frame" x="0.0" y="174.66666666666663" width="375" height="375"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="0Oa-Hy-Lrv" secondAttribute="height" multiplier="1:1" id="fHM-nY-hR9"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="VMN-S2-pDm"/>
+                        <color key="backgroundColor" systemColor="systemBrownColor"/>
+                        <constraints>
+                            <constraint firstItem="0Oa-Hy-Lrv" firstAttribute="centerY" secondItem="VMN-S2-pDm" secondAttribute="centerY" id="JdI-z5-q8T"/>
+                            <constraint firstItem="0Oa-Hy-Lrv" firstAttribute="width" secondItem="RwE-Lw-his" secondAttribute="width" id="PEL-6Q-ojQ"/>
+                            <constraint firstItem="0Oa-Hy-Lrv" firstAttribute="centerX" secondItem="VMN-S2-pDm" secondAttribute="centerX" id="TFu-oy-RVU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="mCB-hn-Ez1"/>
+                    <connections>
+                        <outlet property="photoCurrent" destination="0Oa-Hy-Lrv" id="MAK-4o-LTM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PHh-sZ-IZS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4418" y="-245"/>
         </scene>
         <!--Сommunities-->
         <scene sceneID="Ona-0q-Nlz">
@@ -329,18 +365,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kwf-Rb-lOc" customClass="LoadingAnimationView" customModule="FirstApp" customModuleProvider="target">
-                                <rect key="frame" x="67" y="44" width="241" height="20"/>
+                                <rect key="frame" x="67" y="88" width="241" height="20"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="RXZ-dZ-bEV"/>
                                 </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Sz-uO-9zn" customClass="CloudAnimationView" customModule="FirstApp" customModuleProvider="target">
+                                <rect key="frame" x="100" y="116" width="175" height="100"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JB8-Qn-NPj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="kwf-Rb-lOc" firstAttribute="top" secondItem="JB8-Qn-NPj" secondAttribute="top" id="Om5-aN-kfu"/>
+                            <constraint firstItem="JB8-Qn-NPj" firstAttribute="trailing" secondItem="6Sz-uO-9zn" secondAttribute="trailing" constant="100" id="YvQ-KA-Q4n"/>
+                            <constraint firstItem="JB8-Qn-NPj" firstAttribute="bottom" secondItem="6Sz-uO-9zn" secondAttribute="bottom" constant="513" id="dgu-aV-pHV"/>
+                            <constraint firstItem="6Sz-uO-9zn" firstAttribute="centerX" secondItem="JB8-Qn-NPj" secondAttribute="centerX" id="hpk-BF-Ej4"/>
+                            <constraint firstItem="6Sz-uO-9zn" firstAttribute="leading" secondItem="JB8-Qn-NPj" secondAttribute="leading" constant="100" id="kG3-NP-c7P"/>
                             <constraint firstItem="kwf-Rb-lOc" firstAttribute="centerX" secondItem="Edj-Q1-eNd" secondAttribute="centerX" id="l2I-d3-dFU"/>
+                            <constraint firstItem="6Sz-uO-9zn" firstAttribute="top" secondItem="kwf-Rb-lOc" secondAttribute="bottom" constant="8" symbolic="YES" id="wsX-d0-Pmu"/>
                             <constraint firstItem="kwf-Rb-lOc" firstAttribute="leading" secondItem="JB8-Qn-NPj" secondAttribute="leading" constant="67" id="xbI-9E-W2D"/>
                         </constraints>
                     </view>
@@ -348,7 +393,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mh2-Zw-UaQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1788" y="1172"/>
+            <point key="canvasLocation" x="1788" y="1171.92118226601"/>
         </scene>
         <!--MyСommunities-->
         <scene sceneID="bCg-Sq-AHH">
@@ -416,6 +461,9 @@
             <point key="canvasLocation" x="3522" y="499"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="YN6-V5-jFg"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="newspaper" catalog="system" width="128" height="111"/>
         <image name="person.2" catalog="system" width="128" height="81"/>
