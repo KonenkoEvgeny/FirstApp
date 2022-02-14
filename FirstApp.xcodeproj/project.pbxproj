@@ -17,6 +17,7 @@
 		535E1EDA27AE88F400877779 /* AvatarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535E1ED927AE88F400877779 /* AvatarsView.swift */; };
 		535E1EDC27B05DCF00877779 /* FriendsPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535E1EDB27B05DCF00877779 /* FriendsPhotosViewController.swift */; };
 		535E1EDE27B2705200877779 /* CloudAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535E1EDD27B2705200877779 /* CloudAnimationView.swift */; };
+		535E1EE127B27DCD00877779 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 535E1EDF27B27DCD00877779 /* CoreData.xcdatamodeld */; };
 		5374FBD02799517200EAE423 /* FriendsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374FBCF2799517200EAE423 /* FriendsListTableViewController.swift */; };
 		5374FBD3279959D500EAE423 /* FriendsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5374FBD1279959D500EAE423 /* FriendsListTableViewCell.swift */; };
 		5374FBD4279959D500EAE423 /* FriendsListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5374FBD2279959D500EAE423 /* FriendsListTableViewCell.xib */; };
@@ -41,6 +42,7 @@
 		537CE1E927ABE9BD00E70D1B /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537CE1E827ABE9BC00E70D1B /* NewsModel.swift */; };
 		537CE1EB27AC6F6800E70D1B /* LikeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537CE1EA27AC6F6800E70D1B /* LikeControl.swift */; };
 		53E28A3F2785BD10009AE51E /* ImageVkLogoInitial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E28A3E2785BD10009AE51E /* ImageVkLogoInitial.swift */; };
+		53FF591427B8D9DC00A343BE /* PhoneBookPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FF591327B8D9DC00A343BE /* PhoneBookPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,7 @@
 		535E1ED927AE88F400877779 /* AvatarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarsView.swift; sourceTree = "<group>"; };
 		535E1EDB27B05DCF00877779 /* FriendsPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsPhotosViewController.swift; sourceTree = "<group>"; };
 		535E1EDD27B2705200877779 /* CloudAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudAnimationView.swift; sourceTree = "<group>"; };
+		535E1EE027B27DCD00877779 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		5374FBCF2799517200EAE423 /* FriendsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListTableViewController.swift; sourceTree = "<group>"; };
 		5374FBD1279959D500EAE423 /* FriendsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListTableViewCell.swift; sourceTree = "<group>"; };
 		5374FBD2279959D500EAE423 /* FriendsListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsListTableViewCell.xib; sourceTree = "<group>"; };
@@ -80,6 +83,7 @@
 		537CE1E827ABE9BC00E70D1B /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 		537CE1EA27AC6F6800E70D1B /* LikeControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeControl.swift; sourceTree = "<group>"; };
 		53E28A3E2785BD10009AE51E /* ImageVkLogoInitial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVkLogoInitial.swift; sourceTree = "<group>"; };
+		53FF591327B8D9DC00A343BE /* PhoneBookPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneBookPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,9 @@
 		534C15ED2785B5D000A24E74 = {
 			isa = PBXGroup;
 			children = (
+				53FF591327B8D9DC00A343BE /* PhoneBookPage.swift */,
+				535E1EDF27B27DCD00877779 /* CoreData.xcdatamodeld */,
+				534C15F92785B5D000A24E74 /* AppDelegate.swift */,
 				534C15F82785B5D000A24E74 /* FirstApp */,
 				534C15F72785B5D000A24E74 /* Products */,
 			);
@@ -119,7 +126,6 @@
 				5374FBE5279AEFA700EAE423 /* PhotosGalery */,
 				5374FBDB279ABB1A00EAE423 /* CommunitiesList */,
 				5374FBD827997D3800EAE423 /* FriendsList */,
-				534C15F92785B5D000A24E74 /* AppDelegate.swift */,
 				534C15FB2785B5D000A24E74 /* SceneDelegate.swift */,
 				534C15FD2785B5D000A24E74 /* ViewController.swift */,
 				534C15FF2785B5D000A24E74 /* Main.storyboard */,
@@ -333,7 +339,9 @@
 			files = (
 				537CE1E927ABE9BD00E70D1B /* NewsModel.swift in Sources */,
 				537CE1E027A3C01A00E70D1B /* ShadowView.swift in Sources */,
+				535E1EE127B27DCD00877779 /* CoreData.xcdatamodeld in Sources */,
 				537CE1DA27A0343D00E70D1B /* LikeCounterView.swift in Sources */,
+				53FF591427B8D9DC00A343BE /* PhoneBookPage.swift in Sources */,
 				537CE1E627AB27C200E70D1B /* NewsTableViewCell.swift in Sources */,
 				537CE1CF279E8DAC00E70D1B /* AllCommunitiesViewController.swift in Sources */,
 				535E1EDE27B2705200877779 /* CloudAnimationView.swift in Sources */,
@@ -505,6 +513,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S2F994R547;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FirstApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -532,6 +541,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = S2F994R547;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FirstApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -574,6 +584,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		535E1EDF27B27DCD00877779 /* CoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				535E1EE027B27DCD00877779 /* CoreData.xcdatamodel */,
+			);
+			currentVersion = 535E1EE027B27DCD00877779 /* CoreData.xcdatamodel */;
+			path = CoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 534C15EE2785B5D000A24E74 /* Project object */;
 }
