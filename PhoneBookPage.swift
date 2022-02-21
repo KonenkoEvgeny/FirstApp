@@ -111,7 +111,7 @@ private extension PhoneBookPage {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         do {
             let result = try context.fetch(Person.fetchRequest())
-            names = result as! [Person]
+            names = result as [Person]
         } catch let error {
             debugPrint("Could not save", error)
         }

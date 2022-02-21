@@ -11,6 +11,8 @@ import UIKit
 
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var signInOutlet: UIButton!
+      
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var vkView: UIView!
     
@@ -29,11 +31,21 @@ import UIKit
             
             addShadow(view: loginTextField)
             addShadow(view: passwordTextField)
-   
+            addShadow(view: signInOutlet)
             
         }
 
-        override func viewWillAppear(_ animated: Bool) {
+    @IBAction func signInAction(_ sender: Any) {
+        let session = Session.shared
+        session.name = "User name"
+        session.token = UUID().uuidString
+        
+        print (session.name)
+        print (session.token)
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(animated)
             
             NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -43,11 +55,11 @@ import UIKit
         }
         
         @objc func keyboardWasShown(notification: Notification){
-            print("keyboardWasShown🎹🎹🎹🎹🎹")
+      //      print("keyboardWasShown🎹🎹🎹🎹🎹")
         }
         
         @objc func keyboardWillBeHidden(notification: Notification){
-            print("keyboardWillBeHidden🎰🎰🎰🎰🎰")
+        //    print("keyboardWillBeHidden🎰🎰🎰🎰🎰")
         }
         
         @IBAction func didTapOnLogin(_ sender: Any) {

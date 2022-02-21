@@ -84,10 +84,11 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Sign in">
                                     <fontDescription key="titleFontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="16"/>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="baseBackgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" systemColor="systemGray4Color"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="didTapOnLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ubS-Ys-bR9"/>
+                                    <action selector="signInAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B5H-yU-Z2g"/>
                                     <segue destination="GxW-cr-5Qv" kind="show" identifier="loginSegue" id="15z-9p-waD"/>
                                 </connections>
                             </button>
@@ -177,8 +178,8 @@
                         <outlet property="backView" destination="Cpv-8I-Dgd" id="r7L-8C-R1D"/>
                         <outlet property="loginTextField" destination="908-S7-3Lq" id="JrN-dn-pJ9"/>
                         <outlet property="passwordTextField" destination="mna-d3-b9t" id="LLs-gS-Y9C"/>
+                        <outlet property="signInOutlet" destination="1Rq-8d-h0a" id="ufv-5p-Jlc"/>
                         <outlet property="vkView" destination="MWu-XY-S12" id="DEd-xz-QwV"/>
-                        <segue destination="GxW-cr-5Qv" kind="show" id="YN6-V5-jFg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -310,7 +311,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="ii4-ce-eyW"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="Y7g-Gm-Moj" kind="show" id="1YG-nK-WLR"/>
+                        <segue destination="Y7g-Gm-Moj" kind="show" identifier="largePhoto" id="NKP-WL-pad"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bhY-3O-GhE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -525,9 +526,6 @@
             <point key="canvasLocation" x="941.60000000000002" y="-638.42364532019712"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="15z-9p-waD"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="digitalcrown.horizontal.press" catalog="system" width="125" height="128"/>
         <image name="newspaper" catalog="system" width="128" height="111"/>
